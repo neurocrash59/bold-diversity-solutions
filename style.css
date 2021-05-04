@@ -97,12 +97,8 @@ body {
 }
 
 @media screen and (max-width: 576px) {
-    .carousel-item {
-      height: 32rem;
-    }
-    
-    .carousel-item > img {
-      height: 32rem;
+    .carousel-item, .carousel-item > img {
+      height: 50vh;
     }
 
     .carousel-caption {
