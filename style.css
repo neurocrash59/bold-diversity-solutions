@@ -23,7 +23,6 @@ body {
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   bottom: 3rem;
-  z-index: 10;
   width: 40%;
 }
 
@@ -97,13 +96,24 @@ body {
 }
 
 @media screen and (max-width: 576px) {
-    .carousel-item, .carousel-item > img {
-      height: 50vh;
-    }
+  .navbar-collapse
+  {
+      background-color: #212529;
+      padding-left: 0.5rem;
+      border-radius: 0.3rem;
+      flex-grow: 0;
+      flex-basis: 50%;
+  }
+}
 
-    .carousel-caption {
-      width: auto;
-      padding-top: 1rem;
-    }
+@media screen and (max-width: 768px) {
+  .carousel-item, .carousel-item > img {
+    height: 45vh;
+  }
+
+  .carousel-caption {
+    width: auto;
+    bottom: 0;
+  }
 }
 

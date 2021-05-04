@@ -14,3 +14,14 @@ body {
       width: 95%;
     }
   }
+
+  @media screen and (max-width: 576px) {
+    .navbar-collapse
+    {
+        background-color: #212529;
+        padding-left: 0.5rem;
+        border-radius: 0.3rem;
+        flex-grow: 0;
+        flex-basis: 50%;
+    }
+  }
