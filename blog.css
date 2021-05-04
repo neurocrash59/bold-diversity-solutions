@@ -1,5 +1,4 @@
 body {
-    /* padding-top: 3rem; */
     padding-bottom: 3rem;
   }
 
@@ -8,8 +7,13 @@ body {
     position: absolute;
   }
 
+  .navBG {
+    background-color: #344646;
+  }
+
   #blogHeader {
-    background-color: #5a5a5a;
+    background-color: #3C6056;
+    color: #EFE4CE;
   }
 
   h1, h2, h3, h4, h5, h6 {
