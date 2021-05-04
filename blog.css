@@ -1,12 +1,15 @@
 body {
     /* padding-top: 3rem; */
     padding-bottom: 3rem;
-    color: #5a5a5a;
   }
 
   .navbar {
     z-index: 9;
     position: absolute;
+  }
+
+  #blogHeader {
+    background-color: #5a5a5a;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -79,10 +82,6 @@ body {
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-  }
-
-  #about {
-    background-color: #5a5a5a;
   }
   
   @media (min-width: 768px) {
