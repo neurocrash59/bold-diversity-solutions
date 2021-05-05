@@ -1,7 +1,5 @@
 body {
-  /* padding-top: 3rem; */
   padding-bottom: 3rem;
-  color: #5a5a5a;
 }
 
 .navbar {
@@ -9,9 +7,19 @@ body {
   position: absolute;
 }
 
+.navBG {
+background-color: #344646;
+}
+
 #aboutHeader {
-  background-color: #3C6056;
-  margin: 0 4rem;
+  background-color: #777;
+  margin: 0 auto;
+  padding: 3rem;
+  width: 86.8%;
+}
+
+#aboutHeader p {
+  width: 50%;
 }
 
 
@@ -28,10 +36,19 @@ body {
   @media screen and (max-width: 576px) {
     .navbar-collapse
     {
-        background-color: #212529;
+      background-color: #344646;
         padding-left: 0.5rem;
         border-radius: 0.3rem;
         flex-grow: 0;
         flex-basis: 50%;
+    }
+
+    #aboutHeader {
+      width: 92.5%;
+      padding: 3rem 0;
+    }
+
+    #aboutHeader p {
+      width: 100%;
     }
   }

@@ -13,6 +13,10 @@ body {
   position: absolute;
 }
 
+.navBG {
+  background-color: #344646;
+}
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -98,7 +102,7 @@ body {
 @media screen and (max-width: 576px) {
   .navbar-collapse
   {
-      background-color: #212529;
+      background-color: #344646;
       padding-left: 0.5rem;
       border-radius: 0.3rem;
       flex-grow: 0;
