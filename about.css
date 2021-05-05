@@ -8,47 +8,44 @@ body {
 }
 
 .navBG {
-background-color: #344646;
+  background-color: #344646;
 }
 
 #aboutHeader {
   background-color: #777;
   margin: 0 auto;
   padding: 3rem;
-  width: 86.8%;
+  width: 85.3%;
 }
 
 #aboutHeader p {
   width: 50%;
 }
 
-
 .grayBG {
-    background-color: #f6f6f6;
-    padding-left: 4rem;
+  background-color: #f6f6f6;
+  padding-left: 4rem;
+}
+
+.whiteBG {
+  padding-right: 4rem;
+}
+
+@media screen and (max-width: 576px) {
+  .navbar-collapse {
+    background-color: #344646;
+    padding-left: 0.5rem;
+    border-radius: 0.3rem;
+    flex-grow: 0;
+    flex-basis: 50%;
   }
 
-  .whiteBG {
-    padding-right: 4rem;
+  #aboutHeader {
+    width: 92.5%;
+    padding: 3rem 0;
   }
-  
 
-  @media screen and (max-width: 576px) {
-    .navbar-collapse
-    {
-      background-color: #344646;
-        padding-left: 0.5rem;
-        border-radius: 0.3rem;
-        flex-grow: 0;
-        flex-basis: 50%;
-    }
-
-    #aboutHeader {
-      width: 92.5%;
-      padding: 3rem 0;
-    }
-
-    #aboutHeader p {
-      width: 100%;
-    }
+  #aboutHeader p {
+    width: 100%;
   }
+}
