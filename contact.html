@@ -50,31 +50,28 @@
 
     <div class="container-fluid mb-5">
         <div class="row">
-            <div id="contact-form" class="col-6 border rounded-3 shadow mx-auto my-5 p-3">
+            <div id="contactFormContainer" class="col-6 border rounded-3 shadow mx-auto my-5 p-3">
                 <h1 class="display-5 fw-bold text-center mt-3 mb-5">Contact Us</h1>
-                <form class="row g-3 needs-validation" novalidate>
+                <form class="row g-3 needs-validation" action="/contact" id="contactForm" novalidate>
                     <div class="col mb-3 form-floating">
-                        <input type="text" class="form-control" id="firstNameContactForm" required>
+                        <input type="text" name="firstNameContact" class="form-control" id="firstNameContactForm"
+                            required>
                         <label for="firstNameContactForm" class="form-label">First Name</label>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
                     </div>
                     <div class="col mb-3 form-floating">
-                        <input type="text" class="form-control" id="lastNameContactForm" required>
+                        <input type="text" class="form-control" id="lastNameContactForm" name="lastNameContact"
+                            required>
                         <label for="lastNameContactForm" class="form-label">Last Name</label>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
                     </div>
                     <div>
                         <div class="mb-3 form-floating">
-                            <input type="email" class="form-control" id="floatingInputValue">
-                            <label for="floatingInputValue" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="emailContact" required>
+                            <label for="email" class="form-label">Email Address</label>
                         </div>
                     </div>
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" id="commentsContactForm" required></textarea>
+                        <textarea class="form-control" id="commentsContactForm" name="commentsContact"
+                            required></textarea>
                         <label for="commentsContactForm" class="form-label">Comments</label>
                     </div>
                     <div class="col-12 my-3 text-center">
@@ -1226,7 +1223,7 @@
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
 
-    <script src="script.js"></script>
+    <script src="contact.js"></script>
 </body>
 
 </html>

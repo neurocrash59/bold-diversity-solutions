@@ -25,7 +25,11 @@ body {
         flex-basis: 50%;
     }
 
-    #contact-form {
+    #contactFormContainer {
       width: 92.5%;
     }
+  }
+
+  #commentsContactForm {
+    height: 100px;
   }
