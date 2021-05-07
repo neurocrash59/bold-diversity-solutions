@@ -2,11 +2,11 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 html {
-  width: 99.99%;
   overflow-x: hidden;
 }
 
 body {
+  overflow-x: hidden;
   padding-bottom: 3rem;
   color: #5a5a5a;
   font-family: 'Open Sans Condensed', sans-serif;
