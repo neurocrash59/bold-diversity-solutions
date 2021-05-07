@@ -1,6 +1,5 @@
 window.onload = function () {
-    verifyTermsAgreedLS();
-    verifyTermsAgreedCookie();
+    verifyTermsAgreed();
     gdpr();
 }
 AOS.init();
@@ -39,8 +38,6 @@ clickwrap.onsubmit = function () {
     if (typeof (Storage) !== "undefined") {
         window.localStorage.setItem('awamLlcAgreement', 'I knowingly and willingly agreed to accept the Bold Diversity Solutions (Aqua Wealth & Media LLC) Privacy Policy, Terms of Use, and Disclaimer.');
     } else {
-        e.preventDefault();
-
         let today = new Date();
         let expiry = new Date(today.getFullYear() + 1);
 
@@ -50,16 +47,16 @@ clickwrap.onsubmit = function () {
 
 
 // Check to see if either a localStorage key or cookie exists from agreeing to the site terms
-function verifyTermsAgreedLS() {
-    if (!localStorage.getItem('awamLlcAgreement')) {
-        // Do nothing
+function verifyTermsAgreed() {
+    if (typeof (Storage) !== "undefined") {
+        if (!localStorage.getItem('awamLlcAgreement')) {
+            // Do nothing
+        } else {
+            clickwrapAlert.hidden = true;
+        }
     } else {
-        clickwrapAlert.hidden = true;
-    }
-}
-
-function verifyTermsAgreedCookie() {
-    if (document.cookie.indexOf('awamLlcAgreementCookie=') > -1) {
-        clickwrapAlert.hidden = true;
+        if (typeof (Storage) !== "undefined" && document.cookie.indexOf('awamLlcAgreementCookie=') > -1) {
+            clickwrapAlert.hidden = true;
+        }
     }
 }
