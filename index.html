@@ -197,16 +197,23 @@
         <!-- PRIVACY POLICY, TERMS OF USE & DISCLAIMER -->
 
         <!-- START Bootstrap-Cookie-Alert -->
-        <div class="alert text-center cookiealert" role="alert">Please review how, when and why we may collect cookies
-            and
-            other data. By using this website, you agree to accept the terms of our <a href="#privacyModal"
-                data-bs-toggle="modal">Privacy
-                Policy</a>, <a href="#termsModal" data-bs-toggle="modal">Terms of Use</a>
-            and <a href="#disclaimerModal" data-bs-toggle="modal">Disclaimer</a>.
-
-            <button type="button" class="btn btn-primary btn-sm acceptcookies">
-                I agree
-            </button>
+        <div class="alert text-center cookiealert" role="alert">
+            <form action="#">
+                <p>
+                    Please review how, when and why we may collect cookies and other data. By using this website, you
+                    agree to accept the terms of our <a href="#privacyModal" data-bs-toggle="modal">Privacy Policy</a>,
+                    <a href="#termsModal" data-bs-toggle="modal">Terms of Use</a> and <a href="#disclaimerModal"
+                        data-bs-toggle="modal">Disclaimer</a>.
+                </p>
+                <div class="form-check form-check-inline me-0">
+                    <input class="form-check-input" type="checkbox" id="acceptTermsCheck" value="acceptTerms" required>
+                    <label class="form-check-label" for="acceptTermsCheck"></label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm ms-0 acceptcookies" id="acceptTermsBtn" required
+                    disabled>
+                    I agree
+                </button>
+            </form>
         </div>
         <!-- END Bootstrap-Cookie-Alert -->
 
