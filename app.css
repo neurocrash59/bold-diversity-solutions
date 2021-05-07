@@ -3,6 +3,7 @@
 /* Padding below the footer and lighter body text */
 
 body {
+  width: 99.99%;
   padding-bottom: 3rem;
   color: #5a5a5a;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -51,12 +52,12 @@ body {
 .marketing h2 {
   font-weight: 400;
 }
-/* rtl:begin:ignore */
+
 .marketing .col-lg-4 p {
   margin-right: .75rem;
   margin-left: .75rem;
 }
-/* rtl:end:ignore */
+
 
 
 /* Featurettes
