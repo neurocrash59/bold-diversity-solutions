@@ -2473,9 +2473,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-0e8d810c.js",
+      file: assets + "/_app/start-042702fa.js",
       css: [assets + "/_app/assets/start-808c0b29.css"],
-      js: [assets + "/_app/start-0e8d810c.js", assets + "/_app/chunks/vendor-0daa0b85.js", assets + "/_app/chunks/preload-helper-ec9aa979.js"]
+      js: [assets + "/_app/start-042702fa.js", assets + "/_app/chunks/vendor-0daa0b85.js", assets + "/_app/chunks/preload-helper-ec9aa979.js"]
     },
     fetched: void 0,
     floc: false,
@@ -2518,6 +2518,20 @@ var manifest = {
     },
     {
       type: "page",
+      pattern: /^\/coaching-packages\/?$/,
+      params: empty,
+      a: ["src/routes/__layout.svelte", "src/routes/coaching-packages/index.svelte"],
+      b: [".svelte-kit/build/components/error.svelte"]
+    },
+    {
+      type: "page",
+      pattern: /^\/coaching-packages\/payment\/?$/,
+      params: empty,
+      a: ["src/routes/__layout.svelte", "src/routes/coaching-packages/payment.svelte"],
+      b: [".svelte-kit/build/components/error.svelte"]
+    },
+    {
+      type: "page",
       pattern: /^\/articles\/?$/,
       params: empty,
       a: ["src/routes/__layout.svelte", "src/routes/articles/index.svelte"],
@@ -2537,6 +2551,13 @@ var manifest = {
       params: (m) => ({ slug: d(m[1]) }),
       a: ["src/routes/__layout.svelte", "src/routes/articles/[slug].svelte"],
       b: [".svelte-kit/build/components/error.svelte"]
+    },
+    {
+      type: "page",
+      pattern: /^\/contact\/?$/,
+      params: empty,
+      a: ["src/routes/__layout.svelte", "src/routes/contact.svelte"],
+      b: [".svelte-kit/build/components/error.svelte"]
     }
   ]
 };
@@ -2554,16 +2575,25 @@ var module_lookup = {
     return error;
   }),
   "src/routes/index.svelte": () => Promise.resolve().then(function() {
+    return index$2;
+  }),
+  "src/routes/coaching-packages/index.svelte": () => Promise.resolve().then(function() {
     return index$1;
+  }),
+  "src/routes/coaching-packages/payment.svelte": () => Promise.resolve().then(function() {
+    return payment;
   }),
   "src/routes/articles/index.svelte": () => Promise.resolve().then(function() {
     return index;
   }),
   "src/routes/articles/[slug].svelte": () => Promise.resolve().then(function() {
     return _slug_;
+  }),
+  "src/routes/contact.svelte": () => Promise.resolve().then(function() {
+    return contact;
   })
 };
-var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-8b05f49f.js", "css": ["assets/pages/__layout.svelte-b4034b3e.css"], "js": ["pages/__layout.svelte-8b05f49f.js", "chunks/vendor-0daa0b85.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-2bd4ad0f.js", "css": [], "js": ["error.svelte-2bd4ad0f.js", "chunks/vendor-0daa0b85.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-51527903.js", "css": [], "js": ["pages/index.svelte-51527903.js", "chunks/vendor-0daa0b85.js"], "styles": [] }, "src/routes/articles/index.svelte": { "entry": "pages/articles/index.svelte-c053624e.js", "css": ["assets/pages/articles/index.svelte-4a952316.css"], "js": ["pages/articles/index.svelte-c053624e.js", "chunks/vendor-0daa0b85.js"], "styles": [] }, "src/routes/articles/[slug].svelte": { "entry": "pages/articles/[slug].svelte-0a11d833.js", "css": [], "js": ["pages/articles/[slug].svelte-0a11d833.js", "chunks/preload-helper-ec9aa979.js", "chunks/vendor-0daa0b85.js"], "styles": [] } };
+var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-5cb87880.js", "css": ["assets/pages/__layout.svelte-25b812cb.css"], "js": ["pages/__layout.svelte-5cb87880.js", "chunks/vendor-0daa0b85.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-2bd4ad0f.js", "css": [], "js": ["error.svelte-2bd4ad0f.js", "chunks/vendor-0daa0b85.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-51527903.js", "css": [], "js": ["pages/index.svelte-51527903.js", "chunks/vendor-0daa0b85.js"], "styles": [] }, "src/routes/coaching-packages/index.svelte": { "entry": "pages/coaching-packages/index.svelte-139a087d.js", "css": [], "js": ["pages/coaching-packages/index.svelte-139a087d.js", "chunks/vendor-0daa0b85.js"], "styles": [] }, "src/routes/coaching-packages/payment.svelte": { "entry": "pages/coaching-packages/payment.svelte-56a0cf23.js", "css": [], "js": ["pages/coaching-packages/payment.svelte-56a0cf23.js", "chunks/vendor-0daa0b85.js"], "styles": [] }, "src/routes/articles/index.svelte": { "entry": "pages/articles/index.svelte-c053624e.js", "css": ["assets/pages/articles/index.svelte-4a952316.css"], "js": ["pages/articles/index.svelte-c053624e.js", "chunks/vendor-0daa0b85.js"], "styles": [] }, "src/routes/articles/[slug].svelte": { "entry": "pages/articles/[slug].svelte-0a11d833.js", "css": [], "js": ["pages/articles/[slug].svelte-0a11d833.js", "chunks/preload-helper-ec9aa979.js", "chunks/vendor-0daa0b85.js"], "styles": [] }, "src/routes/contact.svelte": { "entry": "pages/contact.svelte-89081f5e.js", "css": [], "js": ["pages/contact.svelte-89081f5e.js", "chunks/vendor-0daa0b85.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -2862,10 +2892,206 @@ var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <p class="${"text-3xl"}">Placeholder!</p>`;
 });
-var index$1 = /* @__PURE__ */ Object.freeze({
+var index$2 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Routes
+});
+var Coaching_packages = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<main class="${"w-full min-h-screen"}"><section class="${"container px-5 py-20 mx-auto"}"><div class="${"flex flex-col text-center w-full mb-20"}"><h1 class="${"sm:text-4xl text-3xl mb-2 text-black"}">What We Offer</h1></div>
+
+		<div class="${"flex flex-wrap -m-4"}"><div class="${"p-4 xl:w-3/4 md:w-1/2 w-full mx-auto"}"><div class="${"h-full p-6 rounded-lg border-2 bg-white border-gray-300 flex flex-col relative overflow-hidden shadow-md"}"><h2 class="${"text-sm tracking-widest mb-1"}">Single Session</h2>
+					<h1 class="${"text-5xl text-black pb-4 mb-4 border-b border-gray-200 leading-none"}">$497</h1>
+					<p class="${"sm:text-xl text-lg"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>One time purchase of 1 hour of 1-On-1 coaching
+					</p></div></div></div>
+
+		<div class="${"flex flex-wrap -m-4"}"><div class="${"p-4 xl:w-1/4 md:w-1/2 w-full ml-auto"}"><div class="${"h-full p-6 rounded-lg border-2 bg-white border-gray-300 flex flex-col relative overflow-hidden shadow-md"}"><h2 class="${"text-sm tracking-widest title-font mb-1"}">Immersion Package</h2>
+					<h1 class="${"text-5xl text-black pb-4 mb-4 border-b border-gray-200 leading-none"}">$10,000/yr ($925/mo)
+					</h1>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>1-On-1 coaching
+					</p>
+					<p class="${"flex items-center mb-2"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>8 Spaces only (waitlist available)
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Four 30-minute specific-to-your-needs coaching sessions (total 2 hours/mo)
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Bonuses: digital course/reading content individually customied to your current
+						needs (including AAPI, Indigenous culture and learning needs, etc.)
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Includes a 30-minute first strategic call
+					</p>
+					<a href="${"/coaching-packages/payment"}"><button class="${"flex items-center mt-auto text-white bg-cinred border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded"}">Purchase</button></a></div></div>
+
+			<div class="${"p-4 xl:w-1/4 md:w-1/2 w-full"}"><div class="${"h-full p-6 rounded-lg border-2 bg-white border-gray-300 flex flex-col relative overflow-hidden shadow-md"}"><h2 class="${"text-sm tracking-widest title-font mb-1 font-medium"}">Purpose-Focused Package
+					</h2>
+					<h1 class="${"text-5xl text-black pb-4 mb-4 border-b border-gray-200 leading-none"}">$7,797/6mo ($1395/mo)
+					</h1>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>1-On-1 coaching
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-2"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>8 Spaces only (waitlist available)
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Four 30-minute specific-to-your-needs coaching sessions (total 2 hours/mo)
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Bonuses: digital course/reading content individually customied to your current
+						needs (including AAPI, Indigenous culture and learning needs, etc.)
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Includes a 30-minute first strategic call
+					</p>
+					<a href="${"/coaching-packages/payment"}"><button class="${"flex items-center mt-auto text-white bg-cinred border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded"}">Purchase</button></a></div></div>
+
+			<div class="${"p-4 xl:w-1/4 md:w-1/2 w-full mr-auto"}"><div class="${"h-full p-6 rounded-lg border-2 bg-white border-gray-300 flex flex-col relative overflow-hidden shadow-md"}"><h2 class="${"text-sm tracking-widest title-font mb-1 font-medium"}">Mastery-Focused Package
+					</h2>
+					<h1 class="${"text-5xl text-black pb-4 mb-4 border-b border-gray-200 leading-none"}">$997/yr (2-payment option available)
+					</h1>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>1-On-1 coaching
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-2"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>8 Spaces only (waitlist available)
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Unlimited 20-minute coaching calls
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Bonuses: digital course/reading content individually customized to your current
+						needs
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Includes a first strategic call, 30 minutes (any refund needed is determined at
+						this time: after this, only a payment/scheduling pause is available, **see details
+						below)
+					</p>
+					<a href="${"/coaching-packages/payment"}"><button class="${"flex items-center mt-auto text-white bg-cinred border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded"}">Purchase</button></a></div></div></div></section>
+
+	<section class="${"container px-5 py-10 mx-auto"}"><div class="${"flex flex-wrap -m-4"}"><div class="${"p-4 xl:w-1/4 md:w-1/2 w-full ml-auto"}"><div class="${"h-full p-6 rounded-lg border-2 bg-white border-gray-300 flex flex-col relative overflow-hidden shadow-md"}"><h2 class="${"text-sm tracking-widest mb-1"}">Applied Diversity Bootcamp</h2>
+					<h1 class="${"text-5xl text-black pb-4 mb-4 border-b border-gray-200 leading-none"}">$497</h1>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Small group coaching (8 Spaces only)
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-2"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Enrollment opens every 8 weeks
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-2"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Four (x4) 40-minute sessions (one session per week)
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Includes assignments and digital materials
+					</p>
+					<a href="${"/coaching-packages/payment"}"><button class="${"flex items-center mt-auto text-white bg-cinred border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded"}">Purchase</button></a></div></div>
+
+			<div class="${"p-4 xl:w-1/4 md:w-1/2 w-full"}"><div class="${"h-full p-6 rounded-lg border-2 bg-white border-gray-300 flex flex-col relative overflow-hidden shadow-md"}"><h2 class="${"text-sm tracking-widest title-font mb-1"}">Diversity Action Workshop</h2>
+					<h1 class="${"text-5xl text-black pb-4 mb-4 border-b border-gray-200 leading-none"}">$247</h1>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Small group coaching (8 space only)
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-2"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Enrollment opens quarterly
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-2"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Focuses on mindset mapping
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>2-Day Intensive: 90 minutes (Saturday), 60 minutes (Sunday)
+					</p>
+					<a href="${"/coaching-packages/payment"}"><button class="${"flex items-center mt-auto text-white bg-cinred border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded"}">Purchase</button></a></div></div>
+
+			<div class="${"p-4 xl:w-1/4 md:w-1/2 w-full mr-auto"}"><div class="${"h-full p-6 rounded-lg border-2 bg-white border-gray-300 flex flex-col relative overflow-hidden shadow-md"}"><h2 class="${"text-sm tracking-widest title-font mb-1"}">Seasoned Diversity Specialist Workbook &amp; Packet
+					</h2>
+					<h1 class="${"text-5xl text-black pb-4 mb-4 border-b border-gray-200 leading-none"}">$197 for digital access
+					</h1>
+					<p class="${"flex items-center text-gray-600 mb-2"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Seasoned Diversity Specialist Workbook and Packet:
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-2"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>On-your-own materials for the seasoned Higher Education professional who already
+						knows what a microagression, etc., looks like, and knows how to recognize which students
+						are actually minorities (hint: it\u2019s not their skin color).
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-2"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Diana\u2019s trademarked Circle \u201Cmapping\u201D working poster for Diversity Equity and
+						Inclusion action in your institution or classroom
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>Powerpoint on teaching from the Circle, based on her chapter in the
+						internationally published book, \u201CTeaching and Learning Innovations in Higher Education\u201D
+					</p>
+					<p class="${"flex items-center text-gray-600 mb-6"}"><span class="${"w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0"}"><svg fill="${"none"}" stroke="${"currentColor"}" stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2.5"}" class="${"w-3 h-3"}" viewBox="${"0 0 24 24"}"><path d="${"M20 6L9 17l-5-5"}"></path></svg>
+						</span>\u201CChanging the Indian Education Paradigm: A Foundation in Culture and Law\u201D eBook,
+						that gives basic background on Native American Residential/Boarding School history
+						(primarily US-focused)\u2014includes 2 educator worksheets for tracking dual-language
+						instruction, designed by Diana.
+					</p>
+					<a href="${"/coaching-packages/payment"}"><button class="${"flex items-center mt-auto text-white bg-cinred border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded"}">Purchase</button></a></div></div></div></section>
+
+	<section class="${"container px-5 py-10 mx-auto text-xs"}"><h1 class="${"text-xs"}"><strong>**Our refund policy:</strong></h1>
+
+		<p>1-1 coaching packages are refundable at the end of the first strategic 30-minute coaching
+			session. This is where we decide that we\u2019re a good fit to meet your specific needs.
+			Emergencies happening after this time can initiate a pause on payments, or a 2-month extension
+			if paid-in-full upfront. We do provide a statement with your beginning and end date, so you
+			don\u2019t have to guess the timeframe.
+		</p>
+
+		<p>Small group coaching Bootcamps and Workshops are refundable *until 24 hours before the event
+			start. If an emergency happens after that, we will work with you to get you a replay of the
+			live coaching and a personal coaching phone call to answer any questions.
+		</p>
+
+		<p>Seasoned Diversity Specialist Workbook and Packet is non-refundable once it\u2019s been
+			downloaded/accessed. If there is an issue with the download, please contact us at: <a class="${"text-indigo-700 underline"}" href="${"mailto:support@bolddiversitysolutions.com"}">support@bolddiversitysolutions.com</a>, and we will work with you to ensure you have access to this important content.
+		</p>
+
+		<p>To be announced: upcoming members-only area where you can collaborate, access bonus coaching
+			sessions, etc., for a monthly fee (cancel at any time; full refund in the first 14-days only)
+		</p></section></main>`;
+});
+var index$1 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Coaching_packages
+});
+var Payment = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<section class="${"flex items-center justify-center text-gray-800 p-8 font-open"}">
+	<div class="${"grid lg:grid-cols-3 md:grid-cols-2 gap-8 w-full max-w-screen-lg"}"><div class="${"lg:col-span-2"}"><h2 class="${"text-sm font-medium"}">Payment Method</h2>
+			<div class="${"bg-white rounded mt-4 shadow-lg"}"><div class="${"flex items-center px-8 py-5"}"><input class="${"appearance-none w-4 h-4 rounded-full border-2 border-white ring-2 ring-blue-600 ring-opacity-100"}" type="${"radio"}" name="${"paypal"}">
+					<label class="${"text-sm font-medium ml-4"}" for="${"payment-method"}">PayPal</label></div>
+				<div class="${"border-t"}"><div class="${"flex items-center px-8 py-5"}"><input class="${"appearance-none w-4 h-4 rounded-full border-2 border-white ring-2 ring-blue-600 ring-opacity-100"}" type="${"radio"}" name="${"payment-method"}">
+						<label class="${"text-sm font-medium ml-4"}" for="${"credit-card"}">Credit Card</label></div>
+					<div class="${"grid grid-cols-2 gap-4 px-8 pb-8"}"><div class="${"col-span-2"}"><label class="${"text-xs font-semibold"}" for="${"cardNumber"}">Card number</label>
+							<input class="${"flex items-center h-10 border mt-1 rounded px-4 w-full text-sm"}" type="${"text"}" placeholder="${"0000 0000 0000 0000"}"></div>
+						<div class="${""}"><label class="${"text-xs font-semibold"}" for="${"cardNumber"}">Expiry Date</label>
+							<input class="${"flex items-center h-10 border mt-1 rounded px-4 w-full text-sm"}" type="${"text"}" placeholder="${"MM/YY"}"></div>
+						<div class="${""}"><label class="${"text-xs font-semibold"}" for="${"cardNumber"}">CVC/CVV</label>
+							<input class="${"flex items-center h-10 border mt-1 rounded px-4 w-full text-sm"}" type="${"password"}" placeholder="${"..."}"></div></div></div></div></div>
+		<div><h2 class="${"text-sm font-medium"}">Purchase Summary</h2>
+			<div class="${"bg-white rounded mt-4 shadow-lg py-6"}"><div class="${"px-8"}"><div class="${"flex items-end"}"><select class="${"text-sm font-medium focus:outline-none -ml-1"}" name="${""}" id="${""}"><option value="${""}">Product (Billed Monthly)</option><option value="${""}">Product (Billed Annually)</option></select>
+						<span class="${"text-sm ml-auto font-semibold"}">$20</span>
+						<span class="${"text-xs text-gray-500 mb-px"}">/mo</span></div>
+					<span class="${"text-xs text-gray-500 mt-2"}">Save 20% with annual billing</span></div>
+				<div class="${"px-8 mt-4"}"><div class="${"flex items-end justify-between"}"><span class="${"text-sm font-semibold"}">Tax</span>
+						<span class="${"text-sm text-gray-500 mb-px"}">10%</span></div></div>
+				<div class="${"px-8 mt-4 border-t pt-4"}"><div class="${"flex items-end justify-between"}"><span class="${"font-semibold"}">Today you pay (AUD)</span>
+						<span class="${"font-semibold"}">$0</span></div>
+					<span class="${"text-xs text-gray-500 mt-2"}">After 1 month free: $22/mo.</span></div>
+				<div class="${"flex items-center px-8 mt-8"}"><input id="${"termsConditions"}" type="${"checkbox"}">
+					<label class="${"text-xs text-gray-500 ml-2"}" for="${"termsConditions"}">I agree to the terms and conditions.</label></div>
+				<div class="${"flex flex-col px-8 pt-4"}"><button class="${"flex items-center justify-center bg-blue-600 text-sm font-medium w-full h-10 rounded text-blue-50 hover:bg-blue-700"}">Start Subscription</button>
+					<button class="${"text-xs text-blue-500 mt-3 underline"}">Have a coupon code?</button></div></div></div></div></section>`;
+});
+var payment = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Payment
 });
 var FeatureArticleCard = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { title } = $$props;
@@ -2970,6 +3196,25 @@ var _slug_ = /* @__PURE__ */ Object.freeze({
   [Symbol.toStringTag]: "Module",
   "default": U5Bslugu5D,
   load
+});
+var ContactForm = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<div class="${"lg:w-1/2 md:w-2/3 mx-auto"}"><div class="${"flex flex-wrap -m-2"}"><div class="${"p-2 w-1/2"}"><div class="${"relative"}"><label for="${"name"}" class="${"leading-7 text-sm text-gray-600"}">Name</label>
+				<input type="${"text"}" id="${"name"}" name="${"name"}" class="${"w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"}"></div></div>
+		<div class="${"p-2 w-1/2"}"><div class="${"relative"}"><label for="${"email"}" class="${"leading-7 text-sm text-gray-600"}">Email</label>
+				<input type="${"email"}" id="${"email"}" name="${"email"}" class="${"w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"}"></div></div>
+		<div class="${"p-2 w-full"}"><div class="${"relative"}"><label for="${"message"}" class="${"leading-7 text-sm text-gray-600"}">Message</label>
+				<textarea id="${"message"}" name="${"message"}" class="${"w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"}"></textarea></div></div>
+		<div class="${"p-2 w-full"}"><button class="${"flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"}">Submit</button></div></div></div>`;
+});
+var Contact = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<main class="${"w-full min-h-screen"}"><section class="${"text-gray-600 body-font relative"}"><div class="${"container px-5 py-24 mx-auto"}"><div class="${"flex flex-col text-center w-full mb-12"}"><h1 class="${"sm:text-3xl text-2xl font-medium font-cormorant title-font mb-4 text-gray-900"}">Contact Us
+				</h1></div>
+			${validate_component(ContactForm, "ContactForm").$$render($$result, {}, {}, {})}</div></section></main>`;
+});
+var contact = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Contact
 });
 
 // .svelte-kit/vercel/entry.js
