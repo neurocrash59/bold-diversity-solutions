@@ -1,6 +1,6 @@
 {
-	"name": "bold-diversity-solution",
-	"version": "0.0.1",
+	"name": "bold-diversity-solutions",
+	"version": "0.0.2",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -9,6 +9,8 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@sveltejs/adapter-vercel": "next",
+		"@sveltejs/app-utils": "next",
 		"@sveltejs/kit": "next",
 		"prettier": "~2.2.1",
 		"prettier-plugin-svelte": "^2.2.0",
