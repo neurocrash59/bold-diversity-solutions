@@ -21,17 +21,13 @@
 
 <script>
 	import { onMount } from 'svelte';
+	import snarkdown from 'snarkdown';
 
 	export let article;
 	let content = article.content;
 
 	let newDate = new Date(article.created_at).toDateString();
 	let postedDate = newDate.slice(4);
-
-	onMount(async () => {
-		const marked = (await import('marked')).default;
-		content = marked(article.content);
-	});
 </script>
 
 <article class="w-8/12 my-4 mx-auto p-6" id="article">
@@ -47,5 +43,5 @@
 		<p class="text-sm md:text-base font-normal text-gray-400 mb-8">Published {postedDate}</p>
 	</div>
 
-	<section class="prose">{@html content}</section>
+	<section class="prose">{@html snarkdown(article.content)}</section>
 </article>

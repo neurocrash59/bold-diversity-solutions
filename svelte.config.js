@@ -9,7 +9,7 @@ const config = {
 		adapter: vercel(),
 		target: '#svelte',
 		vite: () => ({
-			plugins: [WindiCSS.default()]
+			plugins: [WindiCSS()]
 		})
 	}
 };

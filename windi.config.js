@@ -37,6 +37,13 @@ export default defineConfig({
 				cinred: '#b63838',
 				lightgray: '#e3e3e3'
 			},
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: '100%'
+					}
+				}
+			},
 			fontFamily: {
 				open: ['Open Sans', 'sans-serif'],
 				opencon: ['Open Sans Condensed', 'sans-serif'],

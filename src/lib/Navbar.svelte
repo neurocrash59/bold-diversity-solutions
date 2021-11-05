@@ -2,8 +2,8 @@
 	import LoginModal, { openModal } from './LoginModal.svelte';
 </script>
 
-<header class="font-opencon font-bold">
-	<nav class="bg-taupe mb-4">
+<header class="font-opencon font-bold shadow-lg">
+	<nav class="bg-taupe">
 		<div class="container px-6 py-3 mx-auto md:flex md:justify-between md:items-center">
 			<div class="flex items-center justify-between">
 				<div>
@@ -30,7 +30,7 @@
 			</div>
 
 			<!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-			<div class="items-center md:flex">
+			<div class="items-center hidden md:flex">
 				<div class="flex flex-col md:flex-row md:mx-6">
 					<a class="font-bold my-1 text-gray-600 hover:text-light-600 md:mx-4 md:my-0" href="/"
 						>Home</a

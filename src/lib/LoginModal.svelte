@@ -41,14 +41,14 @@
 				<form action="/" enctype="application/x-www-form-urlencoded">
 					<div class="mb-3">
 						<input
-							class="rounded border-1 shadow-sm outline-none focus:outline-none focus:ring w-full"
+							class="w-full px-2 py-1 rounded border border-gray-400 shadow-sm outline-none outline-none focus:ring focus:ring-2 transition duration-200"
 							type="text"
 							placeholder="Please enter username"
 						/>
 					</div>
 					<div class="mb-3">
 						<input
-							class="rounded border-1 shadow-sm outline-none focus:outline-none focus:ring w-full"
+							class="w-full px-2 py-1 rounded border border-gray-400 shadow-sm outline-none outline-none focus:ring focus:ring-2 transition duration-200"
 							type="password"
 							placeholder="Please enter password"
 						/>

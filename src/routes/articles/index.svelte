@@ -19,33 +19,38 @@
 	import ArticlePreviewCard from '$lib/articles/ArticlePreviewCard.svelte';
 
 	export let articles;
-	export let featuredArticles = articles.filter(article => article.featured === true);
+	export let featuredArticles = articles.filter((article) => article.featured === true);
 
 	articles = articles.reverse();
 </script>
 
-<div class="w-full border rounded-lg mb-4 px-8" id="blogHeader" />
+<div class="w-11/12 border rounded-lg" id="blogHeader" />
 
-<section>
-	<div class="font-opencon grid overflow-hidden grid-cols-2 gap-x-12 w-full h-full my-4 px-8">
-		
-	{#each featuredArticles as feature}
-		<FeatureArticleCard title={feature.title} date={feature.posted} description={feature.description} />
-	{/each}	
+<section id="featured-articles">
+	<div class="font-opencon grid overflow-hidden md:grid-cols-2 md:gap-x-12 h-full my-4 px-8">
+		{#each featuredArticles as feature}
+			<FeatureArticleCard
+				title={feature.title}
+				date={feature.posted}
+				description={feature.description}
+			/>
+		{/each}
 	</div>
 </section>
 
 <section class="mt-8">
 	<h2 class="font-cormorant text-3xl italic my-8 ml-10">Most Recent Articles</h2>
 
-	<div class="font-opencon grid overflow-hidden grid-cols-1 w-3/4 h-full my-4 px-8">
-
+	<div class="font-opencon grid overflow-hidden md:grid-cols-1 md:w-3/4 h-full my-4 px-8">
 		{#each articles as article}
 			<a href="/articles/{article.id}">
-				<ArticlePreviewCard title={article.title} date={article.posted} description={article.description} />
+				<ArticlePreviewCard
+					title={article.title}
+					date={article.posted}
+					description={article.description}
+				/>
 			</a>
 		{/each}
-
 	</div>
 </section>
 
@@ -55,8 +60,8 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
-		margin: 0 auto;
-		width: 90vw;
+		margin: 2rem auto;
+		/* width: 90%; */
 		height: 87.5vh;
 	}
 </style>
