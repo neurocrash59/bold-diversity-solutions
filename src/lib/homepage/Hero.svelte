@@ -6,7 +6,9 @@
 	<div class="hero-overlay absolute w-full h-full z-10" />
 	<div class="hero-content h-full flex justify-center md:items-center mx-4">
 		<div class="max-w-md z-20">
-			<h1 class="mb-5 text-5xl text-white">Moving Forward to a Better Normal</h1>
+			<h1 class="mb-5 text-5xl text-white">
+				Moving Forward to a Better Normal <span class="align-top text-base">&reg;</span>
+			</h1>
 			<p class="mb-5 text-white">Some placeholder text</p>
 			<Button
 				bg="bg-indigo-600"

@@ -45,8 +45,8 @@ export default defineConfig({
 				}
 			},
 			fontFamily: {
-				open: ['Open Sans', 'sans-serif'],
-				opencon: ['Open Sans Condensed', 'sans-serif'],
+				open: ['Open Sans Condensed', 'Open Sans', 'sans-serif'],
+				opencon: ['Open Sans Condensed', 'Open Sans', 'sans-serif'],
 				cormorant: ['Cormorant', 'serif'],
 				sans: ['Graphik', 'sans-serif'],
 				serif: ['Merriweather', 'serif']

@@ -4,7 +4,6 @@
 		const data = await res.json();
 
 		const articles = data;
-		console.log(articles);
 
 		return {
 			props: {
@@ -29,11 +28,13 @@
 <section id="featured-articles">
 	<div class="font-opencon grid overflow-hidden md:grid-cols-2 md:gap-x-12 h-full my-4 px-8">
 		{#each featuredArticles as feature}
-			<FeatureArticleCard
-				title={feature.title}
-				date={feature.posted}
-				description={feature.description}
-			/>
+			<a sveltekit:prefetch href="/articles/{feature.id}">
+				<FeatureArticleCard
+					title={feature.title}
+					date={feature.posted}
+					description={feature.description}
+				/>
+			</a>
 		{/each}
 	</div>
 </section>
@@ -43,7 +44,7 @@
 
 	<div class="font-opencon grid overflow-hidden md:grid-cols-1 md:w-3/4 h-full my-4 px-8">
 		{#each articles as article}
-			<a href="/articles/{article.id}">
+			<a sveltekit:prefetch href="/articles/{article.id}">
 				<ArticlePreviewCard
 					title={article.title}
 					date={article.posted}
