@@ -1,5 +1,5 @@
 <script>
-	import PrivacyPolicy, { openModal } from './PrivacyPolicy.svelte';
+	import PrivacyPolicy, { openPrivacyModal } from './PrivacyPolicy.svelte';
 </script>
 
 <svelte:head>
@@ -44,7 +44,7 @@
 
 	<p>
 		&copy; 2017–2021 Bold Diversity Solutions, powered by Aqua Wealth & Media LLC &middot;
-		<button on:click={openModal}>Privacy</button>
+		<button on:click={openPrivacyModal}>Privacy</button>
 		&middot;
 		<a href="#termsModal" data-bs-toggle="modal">Terms</a>
 		&middot;

@@ -1,4 +1,4 @@
-<div class="lg:w-1/2 md:w-2/3 mx-auto">
+<div class="lg:w-1/3 md:w-2/3 h-full mx-auto">
 	<div class="flex flex-wrap -m-2">
 		<div class="p-2 w-1/2">
 			<div class="relative">
@@ -7,7 +7,7 @@
 					type="text"
 					id="name"
 					name="name"
-					class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-all duration-200"
 				/>
 			</div>
 		</div>
@@ -18,7 +18,7 @@
 					type="email"
 					id="email"
 					name="email"
-					class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-all duration-200"
 				/>
 			</div>
 		</div>
@@ -28,7 +28,7 @@
 				<textarea
 					id="message"
 					name="message"
-					class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+					class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-all duration-200"
 				/>
 			</div>
 		</div>

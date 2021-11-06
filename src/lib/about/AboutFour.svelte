@@ -1,4 +1,4 @@
-<div class=" px-6 py-8 mx-auto">
+<div class="w-11/12 px-6 py-8 mx-auto">
 	<div class="items-center md:flex md:justify-end">
 		<div class="md:w-3/4">
 			<h2 class="text-3xl font-bold text-gray-800 mb-4">
