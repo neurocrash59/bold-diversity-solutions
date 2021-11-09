@@ -1,5 +1,5 @@
 <script context="module">
-	export const load = async ({ page: { params }, fetch }) => {
+	export const load = async ({ page: { params }, fetch, session, stuff }) => {
 		const { slug } = params;
 		const res = await fetch(`http://45.79.95.19:1337/articles/${slug}`);
 
@@ -20,7 +20,6 @@
 </script>
 
 <script>
-	import { onMount } from 'svelte';
 	import snarkdown from 'snarkdown';
 
 	export let article;
