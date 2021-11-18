@@ -1,114 +1,43 @@
-<script context="module">
-	export function openModal() {
-		document.querySelector('.loginModal').classList.remove('hidden');
-		document.querySelector('.modalBackdrop').classList.remove('hidden');
-	}
-</script>
-
 <script>
-	function closeModal() {
-		document.querySelector('.loginModal').classList.add('hidden');
-		document.querySelector('.modalBackdrop').classList.add('hidden');
-	}
+	import Modal from './Modal.svelte';
+
+	export let showModal = false;
+
+	const close = () => (showModal = false);
 </script>
 
-<div
-	class="loginModal hidden w-full h-full overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none flex flex-col justify-center items-center mx-auto"
->
-	<div class="relative md:w-1/4 my-6 mx-auto max-w-6xl">
-		<!--content-->
-		<div
-			class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
-		>
-			<!--header-->
-			<div
-				class="flex items-start justify-between p-5 border-b border-solid border-gray-200 rounded-t"
-			>
-				<h3 class="text-3xl font-semibold">Login</h3>
-				<button
-					class="p-1 ml-auto bg-transparent border-0 text-gray-300 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-					on:click={closeModal}
-				>
-					<span
-						class="bg-transparent h-6 w-6 text-2xl text-gray-900 block outline-none focus:outline-none"
+{#if showModal}
+	<Modal on:close={close} header="Login">
+		<form action="/" enctype="application/x-www-form-urlencoded">
+			<div>
+				<label for="username" class="block text-sm text-gray-800">Username</label>
+				<input
+					type="text"
+					class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-all duration-200"
+				/>
+			</div>
+
+			<div class="mt-4">
+				<div class="flex items-center justify-between">
+					<label for="password" class="block text-sm text-gray-800">Password</label>
+					<a href="/" class="text-xs text-gray-600 dark:text-gray-400 hover:underline"
+						>Forgot Password?</a
 					>
-						<i class="fas fa-times" />
-					</span>
+				</div>
+
+				<input
+					type="password"
+					class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-all duration-200"
+				/>
+			</div>
+
+			<div class="mt-6">
+				<button
+					class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+				>
+					Login
 				</button>
 			</div>
-			<!--body-->
-			<div class="relative flex-auto w-full max-w-sm p-6 m-auto rounded-md shadow-md">
-				<form action="/" enctype="application/x-www-form-urlencoded">
-					<div>
-						<label for="username" class="block text-sm text-gray-800">Username</label>
-						<input
-							type="text"
-							class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-all duration-200"
-						/>
-					</div>
-
-					<div class="mt-4">
-						<div class="flex items-center justify-between">
-							<label for="password" class="block text-sm text-gray-800">Password</label>
-							<a href="/" class="text-xs text-gray-600 dark:text-gray-400 hover:underline"
-								>Forgot Password?</a
-							>
-						</div>
-
-						<input
-							type="password"
-							class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-all duration-200"
-						/>
-					</div>
-
-					<div class="mt-6">
-						<button
-							class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
-						>
-							Login
-						</button>
-					</div>
-				</form>
-
-				<div class="flex items-center justify-between mt-4">
-					<span class="w-1/5 border-b dark:border-gray-600 lg:w-1/5" />
-
-					<a
-						href="/"
-						class="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
-						>or login with Social Media</a
-					>
-
-					<span class="w-1/5 border-b dark:border-gray-400 lg:w-1/5" />
-				</div>
-
-				<div class="flex items-center mt-6 -mx-2">
-					<button
-						type="button"
-						class="flex items-center justify-center w-full px-6 py-2 mx-2 text-sm font-medium text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:bg-blue-400 focus:outline-none"
-					>
-						<svg class="w-4 h-4 mx-2 fill-current" viewBox="0 0 24 24">
-							<path
-								d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"
-							/>
-						</svg>
-
-						<span class="hidden mx-2 sm:inline">Sign in with Google</span>
-					</button>
-
-					<a
-						href="/"
-						class="p-2 mx-2 text-sm font-medium text-gray-500 transition-colors duration-200 transform bg-gray-300 rounded-md hover:bg-gray-200"
-					>
-						<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-							<path
-								d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"
-							/>
-						</svg>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="modalBackdrop hidden opacity-25 fixed inset-0 z-40 bg-black" on:click={closeModal} />
+		</form>
+	</Modal>
+{/if}

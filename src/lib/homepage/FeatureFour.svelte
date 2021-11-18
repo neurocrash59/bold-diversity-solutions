@@ -1,5 +1,5 @@
 <section class="w-11/12 mx-auto">
-	<div class="container px-6 py-8 mx-auto">
+	<div class="px-6 py-8 mx-auto">
 		<div class="items-center md:flex">
 			<div class="mt-8 md:mt-0 md:w-1/2 md:order-2">
 				<div class="flex items-center justify-center md:justify-end">
@@ -14,7 +14,7 @@
 			</div>
 
 			<div class="md:w-1/2 md:order-1">
-				<h2 class="text-3xl font-bold text-gray-800">Who I am</h2>
+				<h2 class="text-3xl mt-4 md:mt-0 font-bold text-gray-800">Who I am</h2>
 
 				<p class="mt-4 text-gray-500">
 					Hi I am jane, I've got really tiny puppies. Lorem ipsum dolor sit amet consectetur

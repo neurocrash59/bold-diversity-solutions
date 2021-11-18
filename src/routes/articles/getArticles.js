@@ -1,5 +1,5 @@
 export async function get() {
-	const res = await fetch('http://45.79.95.19:1337/articles');
+	const res = await fetch('http://localhost:1337/posts');
 	const articles = await res.json();
 
 	for (let article of articles) {

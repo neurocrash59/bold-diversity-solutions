@@ -2,7 +2,7 @@
 	import Button from '$lib/Button.svelte';
 </script>
 
-<div class="hero container min-h-screen">
+<div class="hero min-h-screen">
 	<div class="hero-overlay absolute w-full h-full z-10" />
 	<div class="hero-content h-full flex justify-center md:items-center mx-4">
 		<div class="max-w-md z-20">
@@ -14,7 +14,7 @@
 				bg="bg-indigo-600"
 				hoverBg="hover:bg-indigo-700"
 				textColor="text-white"
-				text="Click it, whitey"
+				text="Call to Action"
 			/>
 		</div>
 	</div>
@@ -27,10 +27,12 @@
 		background-repeat: no-repeat;
 		background-position: center left;
 		height: 92.5vh;
+		min-width: 100%;
 	}
 
 	.hero-overlay {
 		background-color: rgba(0, 0, 0, 0.2);
+		width: 100%;
 	}
 
 	.hero-content {

@@ -1,7 +1,7 @@
 <script context="module">
 	export const load = async ({ page: { params }, fetch, session, stuff }) => {
 		const { slug } = params;
-		const res = await fetch(`http://45.79.95.19:1337/articles/${slug}`);
+		const res = await fetch(`http://localhost:1337/posts/${slug}`);
 
 		if (res.status === 404) {
 			const error = new Error('Article not found!');

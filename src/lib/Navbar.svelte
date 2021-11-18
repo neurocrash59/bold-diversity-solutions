@@ -1,10 +1,14 @@
 <script>
-	import LoginModal, { openModal } from './LoginModal.svelte';
+	import LoginModal from './LoginModal.svelte';
+
+	let showModal = false;
+
+	const toggleModal = () => (showModal = !showModal);
 </script>
 
 <header class="font-opencon font-bold shadow-lg">
 	<nav class="bg-taupe">
-		<div class="container px-6 py-3 mx-auto md:flex md:justify-between md:items-center">
+		<div class="px-6 py-3 mx-auto md:flex md:justify-between md:items-center">
 			<div class="flex items-center justify-between">
 				<div>
 					<a class="text-xl font-bold text-gray-600 md:text-2xl hover:text-light-600" href="/"
@@ -41,6 +45,7 @@
 					>
 					<a
 						class="font-bold my-1 text-gray-600 hover:text-light-600 md:mx-4 md:my-0"
+						sveltekit:prefetch
 						href="/articles">Articles</a
 					>
 					<a class="font-bold my-1 text-gray-600 hover:text-light-600 md:ml-4 md:my-0" href="/about"
@@ -49,8 +54,9 @@
 				</div>
 
 				<div class="flex justify-center md:block">
-					<button class="font-bold text-gray-600 hover:text-light-600 md:my-0" on:click={openModal}
-						>Login</button
+					<button
+						class="font-bold text-gray-600 hover:text-light-600 md:my-0"
+						on:click={toggleModal}>Login</button
 					>
 				</div>
 			</div>
@@ -58,7 +64,7 @@
 	</nav>
 </header>
 
-<LoginModal />
+<LoginModal {showModal} />
 
 <!-- <style>
 	header {
