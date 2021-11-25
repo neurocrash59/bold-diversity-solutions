@@ -1,7 +1,7 @@
 <script context="module">
 	export const load = async ({ page: { params }, fetch, session, stuff }) => {
 		const { slug } = params;
-		const res = await fetch(`http://localhost:1337/posts/${slug}`);
+		const res = await fetch(`http://localhost:1337/articles/${slug}`);
 
 		if (res.status === 404) {
 			const error = new Error('Article not found!');
@@ -36,6 +36,9 @@
 				>Back to Article Index</a
 			>
 		</p>
+
+		<img src={article.image} alt="" class="title-img w-full h-auto object-cover mb-4" />
+
 		<h1 class="font-bold font-sans break-normal pt-6 pb-2 text-3xl md:text-4xl">
 			{article.title}
 		</h1>

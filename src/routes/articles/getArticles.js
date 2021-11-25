@@ -1,5 +1,10 @@
 export async function get() {
-	const res = await fetch('http://localhost:1337/posts');
+	const res = await fetch('http://localhost:1337/articles', {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	});
 	const articles = await res.json();
 
 	for (let article of articles) {

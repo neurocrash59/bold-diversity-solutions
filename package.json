@@ -1,6 +1,7 @@
 {
 	"name": "bold-diversity-solutions",
-	"version": "0.0.4",
+	"version": "0.0.5",
+	"license": "UNLICENSED",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -13,8 +14,8 @@
 		"@sveltejs/app-utils": "next",
 		"@sveltejs/kit": "next",
 		"prettier": "~2.4.1",
-		"prettier-plugin-svelte": "^2.4.0",
-		"svelte": "^3.44.1",
+		"prettier-plugin-svelte": "^2.5.0",
+		"svelte": "^3.44.2",
 		"svelte-preprocess": "^4.9.8",
 		"vite-plugin-windicss": "^1.5.1"
 	},
